@@ -10,8 +10,10 @@
     background-color: #0984e3;
 }
 
-.dark-blue-color-80 {
-    /* background-color: rgba(9, 132, 227, 0.7); */
-    background-color: #96e6b3;
-    color: black;
+.dark-blue-text-color {
+    color: #080708;
+}
+
+a:hover {
+    text-decoration: none;
 }

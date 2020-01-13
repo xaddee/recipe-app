@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+import Navbar from './Components/Navbar.js'
 import Recipe from './Components/Recipe.js'
+import Login from './Components/Login.js'
+import Register from './Components/Register.js'
+import About from './Components/About.js'
+
+import './App.css';
 
 function App() {
 
@@ -11,6 +17,8 @@ function App() {
   //States
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('userNameDefault');
 
   // const [recipes, setRecipes] = useState([{recipe.label: 'Cute Pancakes',
   //                                          calories: 123,
@@ -48,24 +56,37 @@ function App() {
 
   return (
     <div className="App">
-      {/* </Navbar > */}
+      <Router>
+        <Navbar isLoggedIn={isLoggedIn}
+                userName={userName} />
 
-      <div className="d-flex justify-content-center m-3">
-        <form onSubmit={updateQuery} className="form-inline">
-          <input type="text" className="form-control" placeholder="Search for a recipe..." value={search} onChange={updateSearch}/>
-          <button type="submit" className="btn dark-blue-color text-light ml-2">Search</button>
-        </form>
-      </div>
+        <Route exact path="/">
+            {/* Searchbar */}
+            <div className="d-flex justify-content-center m-3">
+              <form onSubmit={updateQuery} className="form-inline">
+                <input type="text" className="form-control" placeholder="Search for a recipe..." value={search} onChange={updateSearch}/>
+                <button type="submit" className="btn dark-blue-color text-light ml-2">Search</button>
+              </form>
+            </div>
 
-      <div className="container text-dark custom-container">
-        {recipes.map((recipe, index) => (
-          <Recipe key={recipe.recipe.label} //find another key
-                  title={recipe.recipe.label} 
-                  calories={recipe.recipe.calories} 
-                  image={recipe.recipe.image}/>
-        ))}
-      </div>
+            {/* Searched recipes */}
+            <div className="container text-dark custom-container">
+              {recipes.map((recipe, index) => (
+                <Recipe key={recipe.recipe.label} //find another key
+                        title={recipe.recipe.label} 
+                        calories={recipe.recipe.calories} 
+                        image={recipe.recipe.image} />
+                        
+              ))}
+            </div>
+          </Route>
+          
+          <Route path="/Login" component={Login}/>
+          <Route path="/Register" component={Register}/>
+          <Route path="/About" component={About}/>
+      </Router>
     </div>
+
   );
 }
 
