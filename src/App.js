@@ -8,13 +8,21 @@ function App() {
   const APP_ID = '9aabad26';
   const APP_KEY = '701d534e360cf30c7f5db4376838156c';
 
+  //States
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
 
+  // const [recipes, setRecipes] = useState([{recipe.label: 'Cute Pancakes',
+  //                                          calories: 123,
+  //                                          image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}, 
+  //                                          {label: 'Different Pancakes',
+  //                                          calories: 123,
+  //                                          image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}, 
+  //                                          {label: 'Special Pancakes',
+  //                                          calories: 123,
+  //                                          image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}]);
+
   const [recipes, setRecipes] = useState([]);
-
-  //States
-
 
   useEffect(() => {
     getRecipes();
@@ -27,7 +35,7 @@ function App() {
 
     setRecipes(data.hits);
   };
-  
+
   const updateSearch = e => {
     setSearch(e.target.value);
   }
@@ -42,20 +50,21 @@ function App() {
     <div className="App">
       {/* </Navbar > */}
 
-      <div className="d-flex justify-content-center m-2">
+      <div className="d-flex justify-content-center m-3">
         <form onSubmit={updateQuery} className="form-inline">
           <input type="text" className="form-control" placeholder="Search for a recipe..." value={search} onChange={updateSearch}/>
-          <button type="submit" className="btn btn-primary ml-2">Search</button>
+          <button type="submit" className="btn dark-blue-color text-light ml-2">Search</button>
         </form>
       </div>
 
-      {recipes.map(recipe => (
-        <Recipe key={recipe.recipe.label} //find another key
-                title={recipe.recipe.label} 
-                calories={recipe.recipe.calories} 
-                image={recipe.recipe.image}/>
-      ))}
-
+      <div className="container text-dark custom-container">
+        {recipes.map((recipe, index) => (
+          <Recipe key={recipe.recipe.label} //find another key
+                  title={recipe.recipe.label} 
+                  calories={recipe.recipe.calories} 
+                  image={recipe.recipe.image}/>
+        ))}
+      </div>
     </div>
   );
 }

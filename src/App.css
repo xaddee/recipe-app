@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Gelasio|Open+Sans&display=swap');
+
+.App, html, body {
+    /* background: linear-gradient(to right, #2193b0, #6dd5ed); */
+    background-color: #74b9ff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.dark-blue-color {
+    background-color: #0984e3;
+}
+
+.dark-blue-color-80 {
+    /* background-color: rgba(9, 132, 227, 0.7); */
+    background-color: #96e6b3;
+    color: black;
+}
