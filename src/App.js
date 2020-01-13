@@ -7,7 +7,7 @@ import Login from './Components/Login.js'
 import Register from './Components/Register.js'
 import About from './Components/About.js'
 
-import './App.css';
+import './CSS/App.css';
 
 function App() {
 
