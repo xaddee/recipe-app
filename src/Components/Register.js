@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 
 export default class About extends Component {
     constructor(props) {
@@ -56,7 +56,7 @@ export default class About extends Component {
             body: JSON.stringify(data)
             
         });
-
+        verifica daca raspunsul primit de la server e ok, daca nu afiseaza erori.
         console.log(response);*/
 
         this.setState({

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default class Navbar extends Component {
     
     render() {
-        const {isLoggedIn, userName} = this.props;
+        const {isLoggedIn, username} = this.props;
 
         if (isLoggedIn) {
             return (
@@ -27,7 +27,7 @@ export default class Navbar extends Component {
                             <Link to="/Logout" className="nav-item">
                                 <a className="nav-link" href="#">Logout</a>
                             </Link>
-                            <li className="nav-item active border-left"><span className="nav-link">Hello, {userName}</span></li>
+                            <li className="nav-item active border-left"><span className="nav-link">Hello, {username}</span></li>
                         </ul>
                     </div>
                     </div>
