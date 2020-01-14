@@ -18,15 +18,15 @@ export default class Navbar extends Component {
 
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
-                            <Link to="/" className="nav-item">
-                                <a className="nav-link" href="#">Home</a>
-                            </Link>
-                            <Link to="/About" className="nav-item">
-                                <a className="nav-link" href="#">About</a>
-                            </Link>
-                            <Link to="/Logout" className="nav-item">
-                                <a className="nav-link" href="#">Logout</a>
-                            </Link>
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/About" className="nav-link">About</Link>
+                            </li>
+                            <li>
+                                <Link to="/Logout" className="nav-link">Logout</Link>
+                            </li>
                             <li className="nav-item active border-left"><span className="nav-link">Hello, {username}</span></li>
                         </ul>
                     </div>

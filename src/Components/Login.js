@@ -41,9 +41,8 @@ export default class About extends Component {
         });
 
         console.log(response);*/
-
-        localStorage.setItem("email", email.toString());
-        localStorage.setItem("loggedIn", "true");
+        
+        //aici vreau sa trimit numele userului si faptul ca s-a logat catre App.js dar nu reusesc
         this.props.history.push("/");
     }
 
