@@ -15,7 +15,7 @@ function App() {
   const APP_KEY = '701d534e360cf30c7f5db4376838156c';
 
   //States
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('chicken');
   const [search, setSearch] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('userNameDefault');
